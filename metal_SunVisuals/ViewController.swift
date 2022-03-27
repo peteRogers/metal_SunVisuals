@@ -80,10 +80,10 @@ class ViewController: UIViewController, MTKViewDelegate{
         filter.inputSunAlitude = altitude
         filter.inputSkyDarkness = darkness
         filter.inputSunDiameter = sunDim
-        let fil = CIFilter(name: "CIGaussianBlur", parameters: [kCIInputImageKey:filter.outputImage!, kCIInputRadiusKey: 15])
+//        let fil = CIFilter(name: "CIGaussianBlur", parameters: [kCIInputImageKey:filter.outputImage!, kCIInputRadiusKey: 15])
         //filter.inputAlbedo = scattering
         let fc = CIFilter(name: "CIHueAdjust")
-        fc?.setValue(fil?.outputImage, forKey: "inputImage")
+        fc?.setValue(filter.outputImage, forKey: "inputImage")
         fc?.setValue(100, forKey: "inputAngle")
 //        //fc?.setValue(CIColor.yellow, forKey: "inputColor0")
 //        fc?.setValue(CIColor(red: 0.9, green: 0.1, blue: 0.3, alpha: 0.5), forKey: "inputColor1")
